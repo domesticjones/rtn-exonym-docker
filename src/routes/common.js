@@ -24,6 +24,15 @@ export default {
     });
   },
   finalize() {
+    // MODULE: Hero Slider
+    $('.hero-slides').slick({
+      arrows: false,
+      autoplay: true,
+      autoplaySpeed: 4000,
+      fade: true,
+      speed: 3000,
+    });
+
   	// MODULES: Parallax
   	$(window).on('load resize scroll', () => {
   		const d_scroll = $(window).scrollTop();

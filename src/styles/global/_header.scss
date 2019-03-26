@@ -52,6 +52,10 @@
     blockquote::before {
       display: none;
     }
+
+    .slick-slide {
+      @include grid(flex-start, center);
+    }
   }
 }
 
