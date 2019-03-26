@@ -42,6 +42,20 @@
   color: $white;
   font-weight: $font-light;
   font-size: 1.5em;
+
+  br {
+    all: unset;
+    display: content;
+    content: '.';
+    white-space: pre;
+
+    &::before {
+      display: inline-block;
+      content: '.';
+      visibility: hidden;
+      width: 3em;
+    }
+  }
 }
 
 .hero-logo {
@@ -72,5 +86,27 @@
 @media (max-width: 1024px) {
   .hero-logo img {
     max-width: 85%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    font-size: 1em;
+
+    br {
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 660px) {
+  .hero-logo {
+    padding: 3em;
+    width: 75vw;
+    height: 75vw;
+
+    img {
+      max-width: 75%;
+    }
   }
 }

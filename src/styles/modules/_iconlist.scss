@@ -76,3 +76,45 @@
   box-shadow: 0 0 2em $black-trans;
   border-radius: 100%;
 }
+
+/**
+  Responsive Breakpoints
+  ---------------------------------------------------------------------- */
+@media (max-width: 660px) {
+  .iconlist-list li,
+  .iconlist-list li:nth-child(even) {
+    @include grid(center, center, column-reverse);
+    margin-bottom: 2em;
+  }
+
+  .iconlist-icon {
+    width: 50vw !important;
+    height: 50vw !important;
+
+    img {
+      max-width: 50%;
+    }
+  }
+
+  .iconlist-content {
+    width: 100%;
+    text-align: center !important;
+    padding: 0 !important;
+
+    .heading {
+      border-bottom: 2px solid $blue;
+
+      h1 {
+        font-size: 2em;
+      }
+
+      p {
+        font-size: 1.15em;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
