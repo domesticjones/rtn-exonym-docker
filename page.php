@@ -1,43 +1,21 @@
 <?php get_header(); ?>
 	<main role="main" aria-label="Content">
 		<?php get_template_part('modules/hero'); ?>
-
-
-
-
-
-		<section>
-
-			<h1><?php the_title(); ?></h1>
-
-		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
-
-			<!-- article -->
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-				<?php the_content(); ?>
-
-
-				<?php edit_post_link(); ?>
-
+		<?php if(have_posts()): while (have_posts()): the_post(); ?>
+			<article class="page-content wrap">
+				<?php
+					if(have_rows('content_blocks')) {
+						while(have_rows('content_blocks')) {
+							the_row();
+							echo '<section class="module-' . get_row_layout() . '">';
+								if(get_row_layout() == 'icon_list') {
+									get_template_part('modules/iconlist');
+								}
+							echo '</section>';
+						}
+					}
+				?>
 			</article>
-			<!-- /article -->
-
-		<?php endwhile; ?>
-
-		<?php else: ?>
-
-			<!-- article -->
-			<article>
-
-				<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
-
-			</article>
-			<!-- /article -->
-
-		<?php endif; ?>
-
-		</section>
-		<!-- /section -->
+		<?php endwhile; endif; ?>
 	</main>
 <?php get_footer(); ?>
