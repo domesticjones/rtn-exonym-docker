@@ -1,7 +1,7 @@
 .module-hero {
   overflow: hidden;
   position: relative;
-  padding-bottom: 2em;
+  padding: 2em;
 
   .module-bg {
     z-index: 0;
@@ -46,15 +46,31 @@
 
 .hero-logo {
   @include grid(center, center, column, wrap, center);
-  margin: 2em auto;
+  margin: 0 auto 2em auto;
   width: 30vw;
+  padding: 4em;
   height: 30vw;
   background-color: $white;
   border-radius: 50%;
 
   img {
     display: block;
-    max-width: 75%;
     transform: translateY(-1vw);
+  }
+}
+
+/**
+  Responsive Breakpoints
+  ---------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .hero-logo {
+    width: 50vw;
+    height: 50vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-logo img {
+    max-width: 85%;
   }
 }

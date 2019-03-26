@@ -12,6 +12,7 @@ export default {
   	$('#responsive-nav-toggle').click(e => {
   		const $this = $(e.currentTarget);
   		$this.toggleClass('is-active');
+      $('#responsive-nav').toggleClass('is-active');
   	});
 
     // QUOTES: Scrolling Quotes in Header/Footer

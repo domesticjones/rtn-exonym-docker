@@ -35,6 +35,22 @@
 					</div>
 				</div>
 			</footer>
+			<nav id="responsive-nav">
+				<a href="<?php echo home_url(); ?>">
+					<img src="<?php ex_logo('primary', 'light'); ?>" class="logo-responsive" />
+				</a>
+				<?php wp_nav_menu(array(
+					'container' => 'ul',                    // enter '' to remove nav container
+					'menu' => __('Responsive', 'exonym'),	  // nav name
+					'theme_location' => 'responsive-menu',	// where it's located in the theme
+					'before' => '',							            // before the menu
+					'after' => '',							            // after the menu
+					'link_before' => '',					          // before each link
+					'link_after' => '',						          // after each link
+					'depth' => 1,							              // limit the depth of the nav
+					'fallback_cb' => ''						          // fallback function
+				)); ?>
+			</nav>
 		</div>
 		<?php wp_footer(); ?>
 	</body>

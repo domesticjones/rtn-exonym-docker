@@ -136,3 +136,68 @@
 /**
   Responsive Breakpoints
   ---------------------------------------------------------------------- */
+@media (max-width: 1440px) {
+  .logo-footer {
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 1200px) {
+  #footer {
+    padding: 0 2em;
+  }
+}
+
+@media (max-width: 1024px) {
+  #footer-nav .wrap {
+    @include grid(center, center, column);
+  }
+
+  .nav-footer {
+    font-size: 1em;
+    margin-top: 2em;
+
+    ul {
+      display: inline-block;
+
+      li {
+        display: inline-block;
+      }
+
+      a {
+        margin: 1em;
+
+        &::before,
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  #footer .wrap {
+    @include grid(center, center, column);
+
+    .footer-left,
+    .footer-right {
+      width: 100%;
+      text-align: center;
+      padding: 1em;
+    }
+
+    .footer-right {
+      font-size: 0.85em;
+      margin-top: 2em;
+    }
+  }
+
+  .emblem-footer {
+    display: none;
+  }
+}
+
+@media (max-width: 960px) {
+  .logo-footer {
+    max-width: 75%;
+  }
+}

@@ -1,7 +1,7 @@
 .module-icon_list {
   max-width: 768px;
   margin: 0 auto;
-  padding: 2em 0;
+  padding: 4em 0;
 }
 
 .iconlist-list {
@@ -9,7 +9,7 @@
 
   li {
     @include grid();
-    margin-bottom: 4em;
+    margin-bottom: 6em;
 
     &:last-child {
       margin-bottom: 0;
@@ -50,6 +50,7 @@
     }
 
     p {
+      font-weight: $font-light;
       padding-bottom: 1em;
       font-size: 1.25em;
     }

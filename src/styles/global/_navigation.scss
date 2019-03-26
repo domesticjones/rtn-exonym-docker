@@ -3,5 +3,38 @@
   ---------------------------------------------------------------------- */
 
 #responsive-nav-toggle {
-  @include hamburgerMenu(9, $black, 0.75);
+  @include hamburgerMenu(1, $black, 0.65);
+}
+
+#responsive-nav {
+  @include navMenu(vertical);
+  position: fixed;
+  z-index: 1000;
+  top: 6em;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 6em);
+  background-color: $black-trans-dark;
+  padding: 2em;
+  text-align: center;
+  transform: translateY(100%);
+  @include transition();
+
+  a {
+    display: block;
+    color: $grey-light;
+    font-size: 1.5em;
+    padding: 1em;
+    font-weight: $font-light;
+    text-transform: uppercase;
+  }
+
+  &.is-active {
+    transform: translateY(0);
+  }
+}
+
+.logo-responsive {
+  margin: 0 auto;
+  max-width: 75%;
 }

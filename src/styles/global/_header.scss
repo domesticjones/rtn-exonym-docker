@@ -106,13 +106,21 @@
 /**
   Responsive Breakpoints
   ---------------------------------------------------------------------- */
-@media (max-width: 1024px) {
-  .header-top {
-    padding: 1rem;
+@media (max-width: 1440px) {
+  .nav-header {
+    font-size: 1em;
   }
+}
 
+@media (max-width: 1200px) {
+  #header .quotes {
+    display: none;
+  }
+}
+
+@media (max-width: 960px) {
   .nav-header,
-  .header-top .nav-social {
+  #header .nav-social {
     display: none;
   }
 
