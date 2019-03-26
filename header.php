@@ -9,10 +9,26 @@
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 		<div id="container">
       <header id="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-        <div class="wrap">
           <a href="<?php echo get_home_url(); ?>">
-						<img src="<?php ex_logo(); ?>" alt="Logo for <?php ex_brand(); ?>" class="logo-header" />
+						<img src="<?php ex_logo('alternate', 'dark'); ?>" alt="Logo for <?php ex_brand(); ?>" class="logo-header" />
 					</a>
+					<?php
+						$quoteQueryArgs = array(
+							'post_type'              => array('quote'),
+							'posts_per_page'         => '5',
+							'orderby'                => 'rand',
+						);
+						$quoteQuery = new WP_Query($quoteQueryArgs);
+						if($quoteQuery->have_posts()):
+							echo '<ul class="quotes">';
+							while($quoteQuery->have_posts()): $quoteQuery->the_post();
+								echo '<li>';
+									echo '<blockquote><q>' . get_field('quote') . '</q><cite>' . get_the_title() . '</cite></blockquote>';
+								echo '</li>';
+							endwhile;
+							echo '</ul>';
+						endif; wp_reset_postdata();
+					?>
           <nav class="nav-header" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
             <?php wp_nav_menu(array(
               'container' => false,								// remove nav container
@@ -34,5 +50,4 @@
 	          <span class="line"></span>
 	          <span class="line"></span>
 					</a>
-        </div>
       </header>

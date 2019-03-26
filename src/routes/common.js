@@ -1,5 +1,7 @@
+import $ from 'jquery';
+window.$ = window.jQuery = $;
 require('jquery-visible');
-const $ = jQuery;
+require('slick-carousel');
 
 export default {
   init() {
@@ -11,6 +13,15 @@ export default {
   		const $this = $(e.currentTarget);
   		$this.toggleClass('is-active');
   	});
+
+    // QUOTES: Scrolling Quotes in Header/Footer
+    $('.quotes').slick({
+      arrows: false,
+      fade: true,
+      autoplay: true,
+      autoplaySpeed: 6000,
+      adaptiveHeight: true,
+    });
   },
   finalize() {
   	// MODULES: Parallax
