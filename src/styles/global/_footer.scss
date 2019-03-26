@@ -1,8 +1,136 @@
 /**
   Global Website Footer
   ---------------------------------------------------------------------- */
+#footer-nav {
+  position: relative;
+  overflow: hidden;
+  background-color: $black;
+
+  .wrap {
+    @include grid(center, center);
+    min-height: 60vh;
+  }
+
+  .module-bg {
+    opacity: 0.33;
+  }
+}
+
+.logo-footer {
+  max-width: 768px;
+}
+
 .nav-footer {
   @include navMenu(vertical);
+  font-size: 1.75em;
+  font-weight: $font-light;
+  margin: 0 10%;
+
+  a {
+    position: relative;
+    display: block;
+    color: $white;
+    margin: 1em;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: -1.15em;
+      top: 0.6em;
+      width: 0.35em;
+      height: 0.35em;
+      background-color: $grey-light;
+      border-radius: 100%;
+      @include transition();
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: -1.38em;
+      top: 0.375em;
+      width: 0.8em;
+      height: 0.8em;
+      border: 1px solid $grey-light;
+      border-radius: 50%;
+    }
+
+    &:hover::before {
+      background-color: $grey-dark;
+    }
+  }
+}
+
+#footer {
+  background-color: $black;
+  color: $grey-light;
+  font-weight: $font-light;
+
+  a {
+    color: $grey-light;
+    @include fontItalic();
+  }
+
+  .wrap {
+    @include grid(center, flex-start);
+    padding: 2em 0;
+  }
+}
+
+.footer-left,
+.footer-right {
+  width: calc(50% - 1.75em);
+}
+
+.footer-left {
+  padding-right: 2em;
+
+  blockquote,
+  q,
+  cite {
+    margin: 0;
+    padding: 0;
+  }
+
+  q {
+    @include fontItalic();
+  }
+
+  blockquote::before {
+    display: none;
+  }
+
+  cite {
+    display: block;
+    margin-top: 1em;
+    @include fontBold();
+
+    &::before {
+      content: '~ ';
+      display: inline-block;
+    }
+  }
+
+  .quotes {
+    @include listStripped();
+    font-size: 1.25em;
+  }
+}
+
+.footer-right {
+  text-align: right;
+  padding-left: 2em;
+
+  p {
+    padding-bottom: 1em;
+  }
+}
+
+.emblem-footer {
+  display: block;
+  width: 3.5em;
 }
 
 /**

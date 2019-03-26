@@ -38,3 +38,15 @@ $roleObject = get_role( 'editor' );
 if (!$roleObject->has_cap('edit_theme_options')) {
   $roleObject->add_cap('edit_theme_options');
 }
+
+// Website Options
+if(function_exists('acf_add_options_page')) {
+	acf_add_options_page(array(
+		'page_title' 	=> 'Website Options',
+		'menu_title'	=> 'Website Options',
+		'menu_slug' 	=> 'website-options',
+		'capability'	=> 'edit_posts',
+    'icon_url'    => 'dashicons-schedule',
+    'position'    => 3
+	));
+}

@@ -3,9 +3,13 @@
   ---------------------------------------------------------------------- */
 .animate-parallax {
   .module-bg {
+    position: absolute;
     top: 0;
     left: auto;
     right: auto;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
   }
 }
 
@@ -26,13 +30,13 @@
   Parallax Animation
   ---------------------------------------------------------------------- */
 .animate-z-subtle .module-bg {
-  height: calc(100% + 4rem);
+  height: calc(100% + 6em);
 }
 
 .animate-z-normal .module-bg {
-  height: calc(100% + 8rem);
+  height: calc(100% + 12em);
 }
 
 .animate-z-extreme .module-bg {
-  height: calc(100% + 16rem);
+  height: calc(100% + 18em);
 }
