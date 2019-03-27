@@ -1,0 +1,20 @@
+.module-two_column {
+  @include grid();
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 4em 0;
+
+  .column-left,
+  .column-right {
+    width: 50%;
+  }
+
+  .column-left {
+    padding-right: 4em;
+  }
+
+  .column-right {
+    padding-left: 4em;
+    border-left: 2px solid $black;
+  }
+}

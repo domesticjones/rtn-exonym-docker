@@ -1,0 +1,60 @@
+.module-current_holdings {
+  padding: 4em 0;
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.holdings-wrap {
+  @include grid(center, center);
+  margin-top: 2em;
+}
+
+.holdings-legend {
+  @include listStripped();
+  font-size: 1.25em;
+  padding-right: 4em;
+
+  li {
+    @include grid(flex-start, center);
+    margin-bottom: 1em;
+    transform-origin: left;
+
+    div,
+    small {
+      line-height: 1;
+      margin: 0 0 0 0.5em;
+    }
+
+    div {
+      @include fontBold();
+    }
+  }
+
+  span {
+    display: block;
+    width: 1em;
+    height: 1em;
+    border-radius: 0.25em;
+  }
+}
+
+li.holdings-date {
+  font-size: 0.6em;
+  @include fontItalic();
+  padding-left: 2.75em;
+}
+
+.holdings-pie {
+  width: 40%;
+  border-radius: 50%;
+  transform: rotate(-90deg);
+
+  circle {
+    fill: none;
+    stroke-width: 32;
+    r: 16;
+    cx: 16;
+    cy: 16;
+  }
+}

@@ -39,7 +39,7 @@ if (!$roleObject->has_cap('edit_theme_options')) {
   $roleObject->add_cap('edit_theme_options');
 }
 
-// Website Options
+// Website Options & Current Holdings
 if(function_exists('acf_add_options_page')) {
 	acf_add_options_page(array(
 		'page_title' 	=> 'Website Options',
@@ -47,6 +47,14 @@ if(function_exists('acf_add_options_page')) {
 		'menu_slug' 	=> 'website-options',
 		'capability'	=> 'edit_posts',
     'icon_url'    => 'dashicons-schedule',
+    'position'    => 3
+	));
+	acf_add_options_page(array(
+		'page_title' 	=> 'Current Holdings',
+		'menu_title'	=> 'Current Holdings',
+		'menu_slug' 	=> 'current-holdings',
+		'capability'	=> 'edit_posts',
+    'icon_url'    => 'dashicons-chart-pie',
     'position'    => 3
 	));
 }

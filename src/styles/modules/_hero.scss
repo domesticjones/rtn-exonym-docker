@@ -1,23 +1,33 @@
 .module-hero {
+  @include grid(center, center);
   overflow: hidden;
   position: relative;
-  padding: 2em;
+  padding: 2em 2em 3em 2em;
+  background-color: $black;
+  min-height: 25vh;
 
   .module-bg {
     z-index: 0;
+    opacity: 0.5;
   }
 }
 
-.module-hero-overlay::after {
-  content: '';
-  display: block;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, transparentize($blue, 0.1) 0%, transparentize($blue, 0.06) 33%, $blue 100%);
+.module-hero-overlay {
+  .module-bg {
+    opacity: 1;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparentize($blue, 0.1) 0%, transparentize($blue, 0.06) 33%, $blue 100%);
+  }
 }
 
 .hero-slides,
@@ -55,6 +65,11 @@
       visibility: hidden;
       width: 3em;
     }
+  }
+
+  & *:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
   }
 }
 
