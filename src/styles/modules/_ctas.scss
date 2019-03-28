@@ -1,0 +1,40 @@
+.module-call_to_action {
+  padding: 3em 0;
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.ctas-list {
+  @include listStripped();
+  @include grid(center, center, row, wrap);
+}
+
+a.cta-single {
+  @include grid(center, center);
+  background-color: $blue;
+  color: $grey-light;
+  white-space: nowrap;
+  padding: 0.5em 0.75em !important;
+  margin: 1em;
+  height: 3.5em;
+  line-height: 1;
+  box-shadow: 0 0 1em $black-trans;
+  @include transition();
+
+  img {
+    height: 2em;
+    margin-right: 0.5em;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: $black;
+  }
+
+  small {
+    display: block;
+    margin-top: 0.25em;
+    opacity: 0.5;
+    @include fontItalic();
+  }
+}

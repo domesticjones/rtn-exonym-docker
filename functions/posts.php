@@ -78,7 +78,6 @@ function ex_page_navi() {
 
 // Format for the Blog Navigation
 function ex_post_nav() {
-	// Don't print empty markup if there's nowhere to navigate.
 	$previous = (is_attachment()) ? get_post(get_post()->post_parent) : get_adjacent_post(false, '', true);
 	$next     = get_adjacent_post(false, '', false);
 
@@ -95,4 +94,22 @@ function ex_post_nav() {
 		</div>
 	</nav>
 	<?php
+}
+
+// Format Filesizes
+function fileSizeDisplay($bytes) {
+  if ($bytes >= 1073741824) {
+    $bytes = number_format($bytes / 1073741824, 2) . ' gb';
+  } elseif ($bytes >= 1048576) {
+    $bytes = number_format($bytes / 1048576, 2) . ' mb';
+  } elseif ($bytes >= 1024) {
+    $bytes = number_format($bytes / 1024, 2) . ' kb';
+  } elseif ($bytes > 1) {
+    $bytes = $bytes . ' bytes';
+  } elseif ($bytes == 1) {
+    $bytes = $bytes . ' byte';
+  } else {
+    $bytes = '0 bytes';
+  }
+  return $bytes;
 }
