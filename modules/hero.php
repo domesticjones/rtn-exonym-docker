@@ -1,5 +1,6 @@
 <?php
   $logo = get_field('hero_logo');
+  $logoSize = get_field('hero_logo_size');
   $content = get_field('hero_content');
   $overlay = get_field('hero_overlay');
   $images = get_field('hero_images');
@@ -20,8 +21,12 @@
     ?>
       <div class="hero-content">
         <?php if($logo): ?>
-          <div class="hero-logo">
-            <img src="<?php ex_logo(); ?>" alt="Logo for <?php ex_brand(); ?>" />
+          <div class="hero-logo hero-logo-<?php echo $logoSize; ?>">
+            <?php if($logoSize == 'small'): ?>
+              <img src="<?php ex_logo('primary', 'light'); ?>" alt="Logo for <?php ex_brand(); ?>" />
+            <?php else: ?>
+              <img src="<?php ex_logo(); ?>" alt="Logo for <?php ex_brand(); ?>" />
+            <?php endif; ?>
           </div>
         <?php
           endif;
