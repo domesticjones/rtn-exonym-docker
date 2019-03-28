@@ -58,3 +58,20 @@ li.holdings-date {
     cy: 16;
   }
 }
+
+@media (max-width: 660px) {
+  .holdings-pie {
+    width: 55%;
+  }
+
+  .holdings-legend {
+    font-size: 1em;
+    width: 45%;
+    padding-right: 1em;
+    margin-top: 1em;
+  }
+
+  .holdings-wrap {
+    @include grid();
+  }
+}

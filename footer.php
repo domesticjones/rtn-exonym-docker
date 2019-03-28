@@ -5,7 +5,9 @@
 			<footer id="footer-nav" class="animate-parallax animate-z-subtle">
 				<div class="module-bg"<?php if($footerImages) { echo ' style="background-image: url(' . $footerImages[$footerImage]['sizes']['jumbo'] . ')"'; } ?>></div>
 				<div class="wrap">
-					<img src="<?php ex_logo('primary', 'light'); ?>" class="logo-footer" />
+					<a href="<?php echo home_url(); ?>">
+						<img src="<?php ex_logo('primary', 'light'); ?>" class="logo-footer" alt="Logo for <?php ex_brand(); ?>" />
+					</a>
 					<nav class="nav-footer" role="navigation">
 						<?php wp_nav_menu(array(
 							'container' => 'ul',                    // enter '' to remove nav container

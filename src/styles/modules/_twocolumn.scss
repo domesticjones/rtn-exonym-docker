@@ -3,6 +3,7 @@
   max-width: 1024px;
   margin: 0 auto;
   padding: 4em 0;
+  text-align: justify;
 
   .column-left,
   .column-right {
@@ -15,6 +16,24 @@
 
   .column-right {
     padding-left: 4em;
-    border-left: 2px solid $black;
+    border-left: 1px solid $grey;
+  }
+}
+
+@media (max-width: 768px) {
+  .module-two_column {
+    display: block;
+    padding: 2em 0;
+
+    .column-left,
+    .column-right {
+      width: 100%;
+      padding: 0;
+      border: none;
+    }
+
+    .column-left {
+      padding-bottom: 2em;
+    }
   }
 }

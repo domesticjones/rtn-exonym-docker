@@ -24,7 +24,7 @@
           $holdingPie++;
         }
       echo '</svg>';
-    echo '</div>';
+    echo '</section>';
   } else {
     '<p style="text-align: center;"><em>Holdings data unavailable.</em></p>';
   }
