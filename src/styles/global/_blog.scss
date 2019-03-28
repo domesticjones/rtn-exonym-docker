@@ -1,3 +1,7 @@
+.single-post .hero-content {
+  visibility: hidden;
+}
+
 .blog-index-single {
   margin: 2em auto;
   padding: 4em 2em;
@@ -60,6 +64,22 @@
   font-size: 0.85em;
   @include fontItalic();
   color: $grey;
+}
+
+.blog-single-wrap {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding-top: 2em;
+
+  header {
+    text-align: center;
+    margin-bottom: 2em;
+
+    img {
+      display: block;
+      margin: 0 auto 2em auto;
+    }
+  }
 }
 
 @media (max-width: 768px) {
