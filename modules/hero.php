@@ -1,9 +1,9 @@
 <?php
-  $logo = get_field('hero_logo');
-  $logoSize = get_field('hero_logo_size');
-  $content = get_field('hero_content');
-  $overlay = get_field('hero_overlay');
-  $images = get_field('hero_images');
+  $logo = get_field('hero_logo', $postID);
+  $logoSize = get_field('hero_logo_size', $postID);
+  $content = get_field('hero_content', $postID);
+  $overlay = get_field('hero_overlay', $postID);
+  $images = get_field('hero_images', $postID);
   if($content || $images || $logo):
 ?>
   <header class="module-hero animate-parallax animate-z-normal<?php if($overlay) { echo ' module-hero-overlay'; } ?>">
