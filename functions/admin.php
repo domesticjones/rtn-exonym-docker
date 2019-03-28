@@ -58,3 +58,15 @@ if(function_exists('acf_add_options_page')) {
     'position'    => 3
 	));
 }
+
+// Admin Custom CSS
+add_action('admin_head', 'exonym_custom_fonts');
+function exonym_custom_fonts() {
+  echo '<style>
+    .image-wrap img {
+      background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTAgMTAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDEwIDEwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4uc3Qwe29wYWNpdHk6MC4xO308L3N0eWxlPjxyZWN0IGNsYXNzPSJzdDAiIHdpZHRoPSI1IiBoZWlnaHQ9IjUiLz48cmVjdCB4PSI1IiB5PSI1IiBjbGFzcz0ic3QwIiB3aWR0aD0iNSIgaGVpZ2h0PSI1Ii8+PC9zdmc+) !important;
+      background-size: 20px 20px !important;
+      background-color: #666 !important;
+    }
+  </style>';
+}
